@@ -1,0 +1,44 @@
+{
+    "name": "api-service",
+    "version": "1.0.0",
+    "description": "Microservices",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run build-routes && node -r ./../../node_modules/ts-node/register index.ts",
+        "server": "node -r ./node_modules/ts-node/register index.ts",
+        "build-routes": "./../../node_modules/tsoa/dist/cli.js spec-and-routes",
+        "build": "./../../node_modules/typescript/bin/tsc",
+        "debug": "set DEBUG=* && npm run start",
+        "test": "jest",
+        "dev": "./../../node_modules/nodemon/bin/nodemon.js index.ts",
+        "lint": "eslint .",
+        "precommit": "lint-staged",
+        "deploy": "eb deploy"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mregio-tic/talk-project.git"
+    },
+    "keywords": [
+        "api-doc"
+    ],
+    "author": "Developer",
+    "license": "ISC",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "",
+    "dependencies": {
+        "@tsoa/runtime": "^4.1.2",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.18.1",
+        "jsonwebtoken": "^8.5.1",
+        "morgan": "^1.10.0",
+        "multer": "^1.4.5-lts.1",
+        "reflect-metadata": "^0.1.13",
+        "swagger-ui-express": "^4.1.6",
+        "ts-node": "^10.9.1",
+        "tsoa": "^4.1.2"
+    }
+}

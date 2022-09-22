@@ -1,0 +1,42 @@
+{
+  "name": "talk-project",
+  "version": "1.0.0",
+  "description": "Microservices",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run swagger && lerna run --ignore entity-service --stream --parallel start",
+    "build": "lerna run build --stream",
+    "debug": "set DEBUG=* && npm run start",
+    "lerna": "lerna run tsc",
+    "bootstrap": "lerna bootstrap --scope *-service --hoist --includeDependencies",
+    "lint": "lerna run lint --parallel",
+    "setup": "npm install && npm run bootstrap",
+    "diff": "lerna diff",
+    "pre-commit": "lerna run precommit --concurrency 2 --stream",
+    "swagger": "lerna run --stream --since --scope api-service swagger",
+    "eb-deploy": "npm run dev-config && lerna run --stream --parallel deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mregio-tic/talk-project.git"
+  },
+  "keywords": [
+    "talk",
+    "https://medium.com/willsonic/swagger-nodejs-typescript-tsoa-15a3f10fabaf"
+  ],
+  "author": "Talk Devs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mregio-tic/talk-project/issues"
+  },
+  "homepage": "https://github.com/mregio-tic/talk-project#readme",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

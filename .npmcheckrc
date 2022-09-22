@@ -1,0 +1,8 @@
+{
+  "depcheck": {
+    "ignoreMatches": [
+      "ts-node",
+			"promise.any"
+    ]
+  }
+}
