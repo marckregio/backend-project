@@ -20,7 +20,8 @@
         "url": "git+https://github.com/mregio-tic/talk-project.git"
     },
     "keywords": [
-        "api-doc"
+        "api-doc",
+        "https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html"
     ],
     "author": "Developer",
     "license": "ISC",

@@ -10,6 +10,7 @@
     "build": "./../../node_modules/typescript/bin/tsc",
     "debug": "set DEBUG=* && npm run start",
     "test": "jest",
+    "loadtest": "./../../node_modules/loadtest/bin/loadtest.js http://localhost:4001/count/50000000 -n 100 -c 100",
     "dev": "./../../node_modules/nodemon/bin/nodemon.js index.ts",
     "lint": "eslint .",
     "precommit": "lint-staged",
@@ -40,5 +41,8 @@
     "swagger-ui-express": "^4.1.6",
     "ts-node": "^10.9.1",
     "tsoa": "^4.1.2"
+  },
+  "devDependencies": {
+    "loadtest": "^5.2.0"
   }
 }
