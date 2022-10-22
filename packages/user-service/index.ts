@@ -5,8 +5,8 @@ import swaggerUi from "swagger-ui-express";
 import "reflect-metadata";
 import bodyParser from "body-parser";
 import morgan from "morgan";
-import { RegisterRoutes } from "./routes/routes";
-import { AuthenticateRoutes } from "./routes/authenticate";
+
+import {initializeConsumers} from "./consumers";
 
 import cluster from "cluster";
 import totalCPUs from "os";
@@ -33,7 +33,7 @@ if (cluster.isMaster && clustered) {
   console.log(`Worker ${process.pid} started`);
   const app: express.Application = express();
   const server: http.Server = http.createServer(app);
-  const port: string | number = 4001;
+  const port: string | number = 4002;
 
   app.use(cors());
   app.use(morgan("tiny"));
@@ -74,7 +74,6 @@ if (cluster.isMaster && clustered) {
   });
   
   server.listen(port, () => {
-    new RegisterRoutes(app);
-    new AuthenticateRoutes(app);
+    initializeConsumers();
   });
 }

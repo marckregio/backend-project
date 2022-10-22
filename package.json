@@ -4,7 +4,7 @@
   "description": "Microservices",
   "main": "index.js",
   "scripts": {
-    "start": "npm run swagger && lerna run --ignore file-service --stream --parallel start",
+    "start": "npm run swagger && lerna run --ignore file-service --ignore api-service --stream --parallel start",
     "build": "lerna run build --stream",
     "debug": "set DEBUG=* && npm run start",
     "lerna": "lerna run tsc",
@@ -23,7 +23,8 @@
   "keywords": [
     "talk",
     "https://medium.com/willsonic/swagger-nodejs-typescript-tsoa-15a3f10fabaf",
-    "https://tsoa-community.github.io/docs/authentication.html"
+    "https://tsoa-community.github.io/docs/authentication.html",
+    "https://kafka.js.org/docs/producer-example"
   ],
   "author": "Talk Devs",
   "license": "ISC",
@@ -32,10 +33,18 @@
   },
   "homepage": "https://github.com/mregio-tic/talk-project#readme",
   "dependencies": {
-    
-  },
-  "devDependencies": {
-    
+    "kafkajs": "^2.2.2",
+    "@tsoa/runtime": "^4.1.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "reflect-metadata": "^0.1.13",
+    "swagger-ui-express": "^4.1.6",
+    "ts-node": "^10.9.1",
+    "tsoa": "^4.1.2"
   },
   "workspaces": [
     "packages/*"

@@ -1,10 +1,10 @@
 {
-  "name": "api-service",
+  "name": "user-service",
   "version": "1.0.0",
   "description": "Microservices",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build-routes && node -r ./../../node_modules/ts-node/register index.ts",
+    "start": "node -r ./../../node_modules/ts-node/register index.ts",
     "server": "node -r ./node_modules/ts-node/register index.ts",
     "build-routes": "./../../node_modules/tsoa/dist/cli.js spec-and-routes",
     "build": "./../../node_modules/typescript/bin/tsc",

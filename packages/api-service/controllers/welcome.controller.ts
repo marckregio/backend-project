@@ -10,6 +10,7 @@ export class WelcomeController extends CommonControllers {
 	@Get("{name}")
 	public async hello(@Path() name: string): Promise<Hello> {
 		const response: Hello = { message: `hello ${name}`};
+		await this.welcomeProducer(response.message);
 		return response;
 	}
 
