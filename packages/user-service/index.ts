@@ -74,6 +74,6 @@ if (cluster.isMaster && clustered) {
   });
   
   server.listen(port, () => {
-    initializeConsumers();
+    //initializeConsumers();
   });
 }

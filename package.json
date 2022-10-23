@@ -4,7 +4,7 @@
   "description": "Microservices",
   "main": "index.js",
   "scripts": {
-    "start": "npm run swagger && lerna run --ignore file-service --ignore api-service --stream --parallel start",
+    "start": "npm run swagger && lerna run --ignore api-service --stream --parallel start",
     "build": "lerna run build --stream",
     "debug": "set DEBUG=* && npm run start",
     "lerna": "lerna run tsc",
